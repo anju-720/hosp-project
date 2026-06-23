@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="text-center">
+        <div class="card shadow border-0 p-5">
+            <h1 class="text-success mb-3">✓ Booking Submitted Successfully!!</h1>
+
+            <p class="lead">
+                Thank you for choosing SP MultiCare.
+                Our team will contact you shortly.
+            </p>
+
+            <a href="{% url 'home' %}" class="btn btn-hero-primary mt-3">
+                Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+<style>
+    .btn-hero-primary {
+        background-color: #9B111E;
+        color: white;
+    }
+
+    .btn-hero-primary:hover {
+        background-color: #7d0e18;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+    }
+    </style>
+{% endblock %}

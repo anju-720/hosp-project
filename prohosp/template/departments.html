@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .department-card {
+        border: none;
+        border-radius: clamp(16px, 3vw, 20px);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        background: #fff;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: clamp(1.5rem, 3vw, 2rem);
+        min-height: clamp(280px, 50vh, 320px);
+    }
+
+    .department-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(155, 17, 30, 0.25);
+    }
+
+    .department-card img {
+        width: clamp(70px, 10vw, 90px);
+        height: clamp(70px, 10vw, 90px);
+        object-fit: contain;
+        transition: 0.4s;
+        margin: 0 auto clamp(12px, 2vw, 15px);
+    }
+
+    .department-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .department-card h4 {
+        color: #9B111E;
+        font-weight: 700;
+        margin-top: clamp(10px, 2vw, 15px);
+        margin-bottom: clamp(10px, 1.5vw, 12px);
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+
+    .department-card p {
+        color: #666;
+        font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .department-btn {
+        width: clamp(40px, 6vw, 45px);
+        height: clamp(40px, 6vw, 45px);
+        border-radius: 50%;
+        background: #9B111E;
+        color: #fff;
+        border: none;
+        font-size: clamp(18px, 3vw, 22px);
+        transition: 0.3s;
+        margin-top: auto;
+    }
+
+    .department-btn:hover {
+        background: #7d0d18;
+        transform: scale(1.1);
+    }
+
+    .section-title {
+        color: #9B111E;
+        font-weight: bold;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .view-btn {
+        background: #9B111E;
+        color: #fff;
+        padding: clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 30px);
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .view-btn:hover {
+        color: #fff;
+        background: #7d0d18;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+    }
+
+    .badge {
+        font-size: clamp(0.7rem, 1vw, 0.85rem);
+        padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem) !important;
+    }
+
+    @media (max-width: 992px) {
+        .department-card {
+            min-height: 280px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .department-card {
+            min-height: 260px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .department-card {
+            min-height: 240px;
+        }
+    }
+</style>
+
+<section class="container py-4 py-md-5" id="departments">
+
+    <div class="text-center mb-4 mb-md-5">
+        <span class="badge px-3 px-md-4 py-2 mb-3 mb-md-4" style="background:#9B111E;">
+            OUR DEPARTMENTS
+        </span>
+
+        <h1 class="fw-bold">
+            Our <span style="color:#9B111E;">Departments</span>
+        </h1>
+
+        <p class="text-muted mb-0">
+            World-class medical care across a wide range of specialties.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Cardiology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart1.png' %}" class="mx-auto d-block" alt="Cardiology">
+                <h4>Cardiology</h4>
+                <p>Comprehensive heart care with advanced diagnosis and treatment.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Neurology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart2.png' %}" class="mx-auto d-block" alt="Neurology">
+                <h4>Neurology</h4>
+                <p>Expert care for brain, spine and nervous system disorders.</p>
+                <button class="department-btn">→</button>
+            </div>
+        </div>
+
+        <!-- Nephrology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart4.png' %}" class="mx-auto d-block" alt="Nephrology">
+                <h4>Nephrology</h4>
+                <p>Specialized care for kidney diseases and disorders.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Gastroenterology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart5.png' %}" class="mx-auto d-block" alt="Gastroenterology">
+                <h4>Gastroenterology</h4>
+                <p>Diagnosis and treatment for digestive system diseases.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Pulmonology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart6.png' %}" class="mx-auto d-block" alt="Pulmonology">
+                <h4>Pulmonology</h4>
+                <p>Expert care for lung and respiratory conditions.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Orthopedics -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-sm text-center h-100">
+                <img src="{% static 'images/depart3.png' %}" class="mx-auto d-block" alt="Orthopedics">
+                <h4>Orthopedics</h4>
+                <p>Advanced care for bones, joints and musculoskeletal conditions.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+    </div>
+
+</section>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Emergency Care -->
+        <div class="col-lg-3 col-md-5">
+            <div class="department-card shadow-sm text-center p-4 h-100">
+                <img src="{% static 'images/dep7.png' %}" class="mx-auto d-block">
+                <h4>Emergency Care</h4>
+                <p>24/7 emergency services with rapid response and expert care.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

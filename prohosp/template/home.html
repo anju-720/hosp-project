@@ -1,0 +1,1138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="hospital"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="4000">
+
+    <!-- Dots -->
+
+    <div class="carousel-indicators">
+        <button type="button"
+                data-bs-target="#hospitalCarousel"
+                data-bs-slide-to="0"
+                class="active">
+        </button>
+
+        <button type="button"
+                data-bs-target="#hospitalCarousel"
+                data-bs-slide-to="1">
+        </button>
+
+        <!-- <button type="button"
+                data-bs-target="#hospitalCarousel"
+                data-bs-slide-to="2">
+        </button> -->
+    </div>
+
+    <!-- Images -->
+
+    <div class="carousel-inner" id="hospital">
+
+        <div class="carousel-item active position-relative">
+            <img src="{% static 'images/hospital1.png' %}"
+                 class="d-block w-100 carousel-img"
+                 alt="Hospital Image 1">
+            
+            <!-- Gradient Overlay for Text Visibility -->
+            <div class="carousel-gradient-overlay"></div>
+            
+            <!-- Hero Content Overlay -->
+            <div class="hero-overlay">
+                <div class="hero-copy">
+                    <h1 class="hero-title">
+                        <span class="hero-title-black">CARE BEYOND</span>
+                        <span class="hero-title-accent">BOUNDARIES</span>
+                    </h1>
+                    <p class="hero-subheading">
+                        Advanced Technology. Expert Care.<br>Compassionate Healing.
+                    </p>
+                    <p class="hero-description">
+                        At SP MultiCare Super Speciality Hospital,<br>we deliver world-class healthcare with advanced <br>technology and a patient-first approach.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#appointment" class="btn btn-hero-primary">
+                            Book Appointment
+                        </a>
+                        <a href="#emergency" class="btn btn-hero-secondary">
+                            Emergency Care
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item position-relative">
+            <img src="{% static 'images/hospital2.png' %}"
+                 class="d-block w-100 carousel-img"
+                 alt="Hospital Image 2">
+
+    <div class="overlay"></div>
+
+
+            <!-- Gradient Overlay for Text Visibility -->
+            <div class="carousel-gradient-overlay"></div>
+
+            <!-- Hero Content Overlay -->
+            <div class="hero-overlays">
+                <div class="hero-copy">
+                    <h1 class="hero-title">
+                        <span class="hero-title-black">WE ARE HERE</span>
+                        <span class="hero-title-black">FOR YOUR CARE</span>
+                    </h1>
+                    <!-- <p class="hero-subheading">
+                        Advanced Technology. Expert Care.<br>Compassionate Healing.
+                    </p>
+                    <p class="hero-description">
+                        At SP MultiCare Super Speciality Hospital,<br>we deliver world-class healthcare with advanced technology and a patient-first approach.
+                    </p> -->
+                    <div class="hero-buttons">
+                        <a href="#appointment" class="btn btn-hero-primary">Book Appointment</a>
+                        <a href="#emergency" class="btn btn-hero-secondary">Emergency Care</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Book Appointment Button -->
+
+<!-- <div class="hero-btn">
+    <a href="{% url 'appointment' %}"
+       class="btn btn-danger btn-lg px-5 py-3">
+        Book Appointment
+    </a>
+</div> -->
+
+<style>
+    .carousel-item {
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Carousel Container */
+    #hospitalCarousel {
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    .carousel-inner {
+        background: #f8f9fa;
+    }
+
+    /* Carousel Image - Responsive */
+    .carousel-img {
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Carousel Item - Responsive Height */
+    .carousel-item {
+        position: relative;
+        height: auto;
+        min-height: clamp(50vh, 80vh, 100vh);
+    }
+
+    /* Gradient Overlay on Left Side */
+    .carousel-gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: clamp(40%, 60%, 100%);
+        height: 100%;
+        background: linear-gradient(to right, 
+            rgba(255, 255, 255, 0.4) 0%, 
+            rgba(255, 255, 255, 0.2) 30%, 
+            transparent 60%);
+        z-index: 1;
+    }
+
+    /* Hero Overlay - Positioned Absolutely */
+    .hero-overlay,
+    .hero-overlays {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 2;
+        padding: clamp(20px, 5vw, 40px);
+    }
+
+    /* Hero Copy Content */
+    .hero-copy {
+        max-width: clamp(300px, 90vw, 600px);
+        margin-left: clamp(0, 3vw, 40px);
+    }
+
+    /* Hero Title - Responsive */
+    .hero-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        font-size: clamp(1.5rem, 6vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 clamp(16px, 3vw, 24px) 0;
+    }
+
+    .hero-title-black {
+        color: #000000;
+    }
+
+    .hero-title-accent {
+        color: #9B111E;
+    }
+
+    /* Hero Subheading */
+    .hero-subheading {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 600;
+        color: #333333;
+        margin-bottom: clamp(10px, 2vw, 16px);
+        line-height: 1.5;
+    }
+
+    /* Hero Description */
+    .hero-description {
+        font-size: clamp(0.85rem, 1.5vw, 1rem);
+        color: #555555;
+        line-height: 1.6;
+        margin-bottom: clamp(20px, 4vw, 32px);
+    }
+
+    /* Hero Buttons */
+    .hero-buttons {
+        display: flex;
+        gap: clamp(12px, 3vw, 16px);
+        flex-wrap: wrap;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        padding: clamp(12px, 2vw, 14px) clamp(24px, 4vw, 32px);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: clamp(0.85rem, 1.5vw, 1rem);
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        white-space: nowrap;
+    }
+
+    .btn-hero-primary {
+        background-color: #9B111E;
+        color: white;
+    }
+
+    .btn-hero-primary:hover {
+        background-color: #7d0e18;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+    }
+
+    .btn-hero-secondary {
+        background-color: transparent;
+        color: #9B111E;
+        border: 2px solid #9B111E;
+    }
+
+    .btn-hero-secondary:hover {
+        background-color: #9B111E;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+    }
+
+    /* Hide Previous/Next Arrows */
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
+
+    /* Carousel Indicators */
+    .carousel-indicators {
+        margin-bottom: clamp(15px, 3vw, 30px);
+        bottom: clamp(10px, 2vw, 15px);
+        z-index: 3;
+    }
+
+    .carousel-indicators button {
+        width: clamp(8px, 1.5vw, 12px) !important;
+        height: clamp(8px, 1.5vw, 12px) !important;
+        border-radius: 50%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .hero-title {
+            font-size: clamp(1.3rem, 5vw, 3.5rem);
+        }
+        
+        .hero-copy {
+            max-width: 550px;
+            margin-left: clamp(0, 2vw, 30px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .carousel-img {
+            min-height: 50vh;
+        }
+
+        .carousel-item {
+            min-height: 50vh;
+        }
+
+        .carousel-gradient-overlay {
+            width: 100%;
+            background: linear-gradient(to right, 
+                rgba(255, 255, 255, 0.5) 0%, 
+                rgba(255, 255, 255, 0.3) 40%, 
+                transparent 80%);
+        }
+
+        .hero-overlay,
+        .hero-overlays {
+            padding: clamp(15px, 4vw, 20px);
+            align-items: flex-end;
+            padding-bottom: clamp(40px, 8vw, 60px);
+        }
+
+        .hero-copy {
+            max-width: 100%;
+            margin-left: 0;
+        }
+
+        .hero-title {
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+        }
+
+        .hero-subheading {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+        }
+
+        .hero-description {
+            font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .btn-hero-primary,
+        .btn-hero-secondary {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .carousel-img {
+            min-height: 40vh;
+        }
+
+        .carousel-item {
+            min-height: 40vh;
+        }
+
+        .hero-overlay,
+        .hero-overlays {
+            padding: clamp(12px, 3vw, 15px);
+            align-items: flex-end;
+            padding-bottom: clamp(40px, 6vw, 50px);
+        }
+
+        .hero-copy {
+            max-width: 100%;
+            margin-left: 0;
+        }
+
+        .hero-title {
+            font-size: clamp(1rem, 3.5vw, 1.75rem);
+        }
+
+        .hero-subheading {
+            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+            margin-bottom: clamp(8px, 1vw, 12px);
+        }
+
+        .hero-description {
+            font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+            margin-bottom: clamp(15px, 2vw, 20px);
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            gap: clamp(8px, 2vw, 12px);
+        }
+
+        .btn-hero-primary,
+        .btn-hero-secondary {
+            width: 100%;
+            text-align: center;
+            padding: clamp(10px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+        }
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+                
+
+<section class="container py-4 py-md-5" id="about">
+
+    <div class="row align-items-center gy-4">
+
+        <div class="col-md-6">
+
+            <h2 class="fw-bold mb-3 mb-md-4">
+                About SP MultiCare
+            </h2>
+
+            <p class="mb-3 mb-md-4">
+                SP MultiCare provides advanced healthcare services with experienced doctors,
+                modern medical facilities, and patient-friendly management systems.
+            </p>
+
+            <button class="btn btn-custom mt-2">
+                Read More
+            </button>
+
+        </div>
+
+        <div class="col-md-6">
+            <img src="{% static 'images/about.png' %}"
+                 class="img-fluid rounded shadow"
+                 alt="About SP MultiCare"
+                 style="width: 100%; height: auto; object-fit: cover;">
+        </div>
+
+    </div>
+
+<!-- DEPARTMENTS -->
+
+</section>
+
+<style>
+    /* doctors styles */
+#doctorCarousel .carousel-control-prev,
+#doctorCarousel .carousel-control-next {
+    z-index: 9999 !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+
+    #doctorCarousel {
+        padding: 0 30px;
+    }
+
+    #doctorCarousel .carousel-control-prev {
+        left: 0;
+    }
+
+    #doctorCarousel .carousel-control-next {
+        right: 0;
+    }
+
+    #doctorCarousel .carousel-control-prev i,
+    #doctorCarousel .carousel-control-next i {
+        font-size: 30px !important;
+        color: #6c757d !important;
+    }
+}
+
+
+/* department style */
+.department-card{
+    border: none;
+    border-radius: clamp(16px, 3vw, 20px);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: clamp(280px, 50vh, 320px);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.department-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(155, 17, 30, 0.25);
+}
+
+.department-card img{
+    width: clamp(70px, 10vw, 90px);
+    height: clamp(70px, 10vw, 90px);
+    object-fit: contain;
+    transition: 0.4s;
+    margin: 0 auto clamp(12px, 2vw, 15px);
+}
+
+.department-card:hover img{
+    transform: scale(1.1);
+}
+
+.department-card h4{
+    color: #9B111E;
+    font-weight: 700;
+    margin-top: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(12px, 2vw, 16px);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.department-card p{
+    color: #666;
+    font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.department-btn{
+    width: clamp(40px, 6vw, 45px);
+    height: clamp(40px, 6vw, 45px);
+    border-radius: 50%;
+    background: #9B111E;
+    color: #fff;
+    border: none;
+    font-size: clamp(18px, 3vw, 22px);
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+.department-btn:hover{
+    background: #7d0d18;
+    transform: scale(1.1);
+}
+
+.section-title{
+    color: #9B111E;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.view-btn{
+    background: #9B111E;
+    color: #fff;
+    padding: clamp(10px, 1.5vw, 12px) clamp(24px, 3vw, 30px);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover{
+    color: #fff;
+    background: #7d0d18;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+}
+
+/* Responsive Improvements */
+@media (max-width: 992px) {
+    .department-card {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .department-card {
+        min-height: 260px;
+    }
+    
+    .carousel-indicators {
+        bottom: clamp(8px, 1.5vw, 10px);
+    }
+}
+
+/* Doctor Carousel Mobile */
+@media (max-width: 768px) {
+    #doctorCarousel .carousel-inner {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .department-card {
+        min-height: 240px;
+    }
+}
+
+
+.view-btn{
+    background:#9B111E;
+    color:#fff;
+    padding:12px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.view-btn:hover{
+    color:#fff;
+}
+
+/* Responsive Improvements */
+@media (max-width: 992px) {
+    .department-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .department-card {
+        min-height: 280px;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+}
+
+/* Doctor Carousel Mobile */
+@media (max-width: 768px) {
+    #doctorCarousel .carousel-inner {
+        min-height: 400px;
+    }
+}
+</style>
+
+<section class="container py-4" id="departments">
+
+    <div class="text-center mb-4">
+        <!-- <span class="badge px-4 py-2 mb-3" style="background:#9B111E;">
+            OUR DEPARTMENTS
+        </span> -->
+
+        <h1 class="fw-bold display-4">
+            Our <span style="color:#9B111E;">Departments</span>
+        </h1>
+
+        <p class="text-muted fs-5">
+            World-class medical care across a wide range of specialties.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Cardiology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart1.png' %}" class="mx-auto d-block">
+                <h4>Cardiology</h4>
+                <p>Comprehensive heart care with advanced diagnosis and treatment.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Neurology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart2.png' %}" class="mx-auto d-block">
+                <h4>Neurology</h4>
+                <p>Expert care for brain, spine and nervous system disorders.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Orthopedics -->
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart3.png' %}" class="mx-auto d-block">
+                <h4>Orthopedics</h4>
+                <p>Advanced care for bones, joints and musculoskeletal conditions.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+        <!-- Nephrology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart4.png' %}" class="mx-auto d-block">
+                <h4>Nephrology</h4>
+                <p>Specialized care for kidney diseases and disorders.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Gastroenterology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart5.png' %}" class="mx-auto d-block">
+                <h4>Gastroenterology</h4>
+                <p>Diagnosis and treatment for digestive system diseases.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+        <!-- Pulmonology -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="department-card shadow-lg text-center p-4 h-100">
+                <img src="{% static 'images/depart6.png' %}" class="mx-auto d-block">
+                <h4>Pulmonology</h4>
+                <p>Expert care for lung and respiratory conditions.</p>
+                <!-- <button class="department-btn">→</button> -->
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DOCTORS -->
+
+<section class="container py-4" id="doctors">
+
+    <div class="text-center mb-4">
+        <h1 class="fw-bold display-4">
+            Our <span class="text-danger">Doctors</span>
+        </h1>
+        <h2 class="fw-bold">
+            Expert Care From
+            <span class="text-danger">Our Specialists</span>
+        </h2>
+    </div>
+
+    <div id="doctorCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc1.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Ramesh Kumar</h5>
+                                <p class="text-muted">Cardiologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc2.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Anil.V</h5>
+                                <p class="text-muted">Neurologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc3.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Alice John</h5>
+                                <p class="text-muted">Orthopedic Surgeon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc4.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Neha Gupta</h5>
+                                <p class="text-muted">Emergency Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc5.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Rajesh Patel</h5>
+                                <p class="text-muted">Pathologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow text-center h-100">
+                            <img src="{% static 'images/doc6.png' %}"
+                                 class="card-img-top" alt="Doctor">
+                            <div class="card-body">
+                                <h5>Dr. Roy</h5>
+                                <p class="text-muted">Nephrologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous Arrow -->
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#doctorCarousel"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <!-- Next Arrow -->
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#doctorCarousel"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        
+    
+
+
+    </div>
+    
+
+</section>
+
+<!-- APPOINTMENT -->
+
+<section class="py-4 py-md-5"
+         style="background-color: #f8f9fa;" id="appointment">
+
+    <div class="container">
+
+        <div class="text-center mb-4 mb-md-5">
+
+            <h1 class="fw-bold">
+            Book An <span style="color:#9B111E;">Appointment</span>
+        </h1>
+
+            <p class="text-muted mb-0">
+                Schedule your appointment easily
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8 col-md-10">
+
+                <div class="card shadow border-0 p-3 p-md-4">
+
+                    <form method="POST" action="{% url 'appointment' %}">
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-500">
+                                    Full Name
+                                </label>
+
+                                <input type="text"
+                                       name="patient_name"
+                                       class="form-control"
+                                       placeholder="Enter your name"
+                                       required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-500">
+                                    Phone Number
+                                </label>
+
+                                <input type="text"
+                                       name="phone"
+                                       class="form-control"
+                                       placeholder="Enter phone number"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-500">
+                                    Department
+                                </label>
+
+                                <select name="department"
+                                        class="form-select"
+                                        {% if departments %}required{% endif %}>
+
+                                    <option value="">Select Department</option>
+                                    {% for department in departments %}
+                                    <option value="{{ department.id }}"
+                                        {% if selected_department|default:'' == department.id|stringformat:"s" %}selected{% endif %}>
+                                        {{ department.dept_name }}
+                                    </option>
+                                    {% endfor %}
+                                    {% if not departments %}
+                                    <option value="">No departments available</option>
+                                    {% endif %}
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-500">
+                                    Appointment Date
+                                </label>
+
+                                <input type="date"
+                                       name="appointment_date"
+                                       class="form-control"
+                                       required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-500">
+                                Message
+                            </label>
+
+                            <textarea class="form-control"
+                                      name="message"
+                                      rows="4"
+                                      placeholder="Write your message"></textarea>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-custom w-100">
+
+                            Confirm Appointment
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<div class="container py-4 py-md-5" id="contact">
+    <div class="text-center mb-4 mb-md-5">
+        <h1 class="fw-bold">Get In Touch</h1>
+        <p class="text-muted">Have any questions? We'd love to hear from you.</p>
+    </div>
+    <div class="row g-4 g-md-5 justify-content-center">
+        <div class="col-md-5 col-lg-5">
+            <div class="bg-light p-3 p-md-4 rounded h-100">
+                <h4 class="fw-bold mb-3">Contact Information</h4>
+                <p class="mb-2"><strong>📍 Address:</strong> <span>SP MultiCare</span></p>
+                <p class="mb-2"><strong>📞 Phone:</strong> <a href="tel:+919876543210">+1 (555) 019-2834</a></p>
+                <p class="mb-0"><strong>✉️ Email:</strong> <a href="mailto:xyz@gmail.com">xyz@gmil.com</a></p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+            <form method="POST" class="shadow-sm p-3 p-md-4 rounded border">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Contact Section Responsive */
+    #contact h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    #contact .bg-light {
+        border-radius: clamp(12px, 2vw, 16px);
+    }
+
+    #contact h4 {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+
+    #contact p, #contact a {
+        font-size: clamp(0.85rem, 1.3vw, 1rem);
+    }
+
+    #contact .form-control,
+    #contact .form-select {
+        font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+        padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 0.75rem);
+    }
+
+    @media (max-width: 768px) {
+        #contact {
+            margin-top: 0;
+        }
+
+        #contact .row {
+            margin-top: 1rem;
+        }
+    }
+
+    /* Emergency Section Responsive */
+    .emergency-section {
+        padding: clamp(2rem, 5vw, 3rem) 0;
+    }
+
+    .emergency-card,
+    .emergency-details {
+        border-radius: clamp(16px, 3vw, 24px);
+        padding: clamp(1.5rem, 3vw, 2rem) !important;
+    }
+
+    .emergency-section h2 {
+        font-size: clamp(1.3rem, 4vw, 2.2rem);
+        margin-bottom: clamp(12px, 2vw, 16px);
+    }
+
+    .emergency-section p {
+        font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+        line-height: 1.6;
+    }
+
+    .emergency-section .badge {
+        font-size: clamp(0.7rem, 1vw, 0.85rem);
+        padding: clamp(0.4rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem) !important;
+    }
+
+    .emergency-actions {
+        display: flex;
+        gap: clamp(10px, 2vw, 16px);
+    }
+
+    .emergency-section .btn {
+        font-size: clamp(0.85rem, 1.3vw, 1rem);
+        padding: clamp(10px, 1.5vw, 12px) clamp(20px, 3vw, 30px);
+    }
+
+    .emergency-details h5 {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .emergency-details ul li {
+        font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+    }
+
+    .emergency-details strong {
+        font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+        .emergency-actions {
+            flex-direction: column;
+        }
+
+        .emergency-actions .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<section id="emergency" class="emergency-section py-5">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6">
+        <div class="emergency-card rounded-4 shadow-sm p-4 p-lg-5 bg-white">
+          <span class="badge bg-danger mb-3 text-uppercase fw-bold">24/7 Emergency Care</span>
+          <h2 class="mb-3">Immediate help when every second counts</h2>
+          <p class="text-muted mb-4">Our emergency department is ready around the clock with expert teams, fast triage, and advanced support for critical care.</p>
+          <div class="emergency-actions d-flex flex-column flex-sm-row gap-3">
+            <a href="tel:+919876543210" class="btn btn-danger">Call Emergency</a>
+            <a href="#appointment" class="btn btn-outline-danger">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="emergency-details rounded-4 shadow-sm p-4 p-lg-5 bg-white border">
+          <h5 class="fw-bold mb-3">Why choose our emergency care?</h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3"><strong>Fast response:</strong> prompt triage and emergency treatment.</li>
+            <li class="mb-3"><strong>Expert team:</strong> specialist doctors and skilled nursing staff.</li>
+            <li class="mb-0"><strong>Advanced facilities:</strong> critical care equipment and diagnostics.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

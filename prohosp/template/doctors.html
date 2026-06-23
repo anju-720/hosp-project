@@ -1,0 +1,187 @@
+{% load static %}
+
+<section class="container py-4 py-md-5" id="doctors">
+
+    <div class="text-center mb-4 mb-md-5">
+        <h6 class="text-danger fw-bold mb-2 mb-md-3">OUR DOCTORS</h6>
+        <h1 class="fw-bold mb-3">
+            Expert Care From
+            <span style="color:#9B111E;">Our Specialists</span>
+        </h1>
+    </div>
+
+    <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row g-3 g-md-4">
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc1.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Ramesh Kumar">
+                            <div class="card-body">
+                                <h5>Dr. Ramesh Kumar</h5>
+                                <p class="text-muted mb-0">Cardiologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc2.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Priya Sharma">
+                            <div class="card-body">
+                                <h5>Dr. Priya Sharma</h5>
+                                <p class="text-muted mb-0">Neurologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc3.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Alice John">
+                            <div class="card-body">
+                                <h5>Dr. Alice John</h5>
+                                <p class="text-muted mb-0">Orthopedic Surgeon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row g-3 g-md-4">
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc4.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Neha Gupta">
+                            <div class="card-body">
+                                <h5>Dr. Neha Gupta</h5>
+                                <p class="text-muted mb-0">Emergency Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc5.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Rajesh Patel">
+                            <div class="card-body">
+                                <h5>Dr. Rajesh Patel</h5>
+                                <p class="text-muted mb-0">Pathologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <img src="{% static 'images/doc6.png' %}"
+                                 class="card-img-top doctor-img"
+                                 alt="Dr. Sneha Nair">
+                            <div class="card-body">
+                                <h5>Dr. Sneha Nair</h5>
+                                <p class="text-muted mb-0">Nephrologist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous -->
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#doctorCarousel"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon rounded-circle p-3" style="background-color:#9B111E;"></span>
+        </button>
+
+        <!-- Next -->
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#doctorCarousel"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon rounded-circle p-3" style="background-color:#9B111E;"></span>
+        </button>
+
+    </div>
+
+</section>
+
+<style>
+    section h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    section h6 {
+        font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+        letter-spacing: 0.05em;
+    }
+
+    .card {
+        border-radius: clamp(16px, 2.5vw, 24px);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 24px rgba(155, 17, 30, 0.15) !important;
+        transform: translateY(-5px);
+    }
+
+    .doctor-img {
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .card-body {
+        padding: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .card h5 {
+        font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+        margin-bottom: 0.5rem;
+        color: #100304;
+        font-weight: 600;
+    }
+
+    .card p {
+        font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+    }
+
+    @media (max-width: 768px) {
+        section {
+            padding: 1.5rem 0;
+        }
+
+        .carousel-item {
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        section h6 {
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        section h1 {
+            font-size: 1.3rem;
+        }
+    }
+</style>

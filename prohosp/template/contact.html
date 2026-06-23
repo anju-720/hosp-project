@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4 py-md-5">
+    <div class="text-center mb-4 mb-md-5">
+        <h1 class="fw-bold">Get In Touch</h1>
+        <p class="text-muted mb-0">Have any questions? We'd love to hear from you.</p>
+    </div>
+    <div class="row g-4 g-md-5 justify-content-center">
+        <div class="col-md-5 col-lg-5">
+            <div class="bg-light p-3 p-md-4 rounded h-100">
+                <h4 class="fw-bold mb-3">Contact Information</h4>
+                <p class="mb-2"><strong>📍 Address:</strong> <span>SP MultiCare</span></p>
+                <p class="mb-2"><strong>📞 Phone:</strong> <a href="tel:+919876543210">+1 (555) 019-2834</a></p>
+                <p class="mb-0"><strong>✉️ Email:</strong> <a href="mailto:xyz@gmail.com">xyz@gmil.com</a></p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+            <form method="POST" class="shadow-sm p-3 p-md-4 rounded border">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    h4 {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+
+    p, a {
+        font-size: clamp(0.85rem, 1.3vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .bg-light {
+        border-radius: clamp(12px, 2vw, 16px);
+    }
+
+    .form-control,
+    .form-select {
+        font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+        padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 0.75rem);
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .row {
+            margin-top: 1rem;
+        }
+
+        .bg-light,
+        form {
+            padding: 1rem !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .bg-light,
+        form {
+            padding: 0.75rem !important;
+        }
+    }
+</style>
+
+{% endblock %}
